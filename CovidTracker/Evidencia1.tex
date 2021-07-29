@@ -1,0 +1,1197 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Evidencia Bio},
+  pdfauthor={Santiago Reyes},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Evidencia Bio}
+\author{Santiago Reyes}
+\date{28/4/2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{importaciuxf3n-de-librerias-y-de-secuencias-limpias}{%
+\subsection{Importación de librerias y de secuencias
+``limpias''}\label{importaciuxf3n-de-librerias-y-de-secuencias-limpias}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(}\StringTok{\textquotesingle{}seqinr\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'seqinr' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(}\StringTok{\textquotesingle{}ggplot2\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggthemes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggthemes' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(stringr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'stringr' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Ruta}
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "C:/Users/user/Desktop/Biología computacional/Evidencia final"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:/Users/user/Desktop/Biología computacional/Evidencia final/FASTAS"}\NormalTok{)}
+
+\CommentTok{\# Funcion de limpieza de caracteres: (Creditos a Lucas Wong)}
+\NormalTok{clean }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  V1}\OtherTok{\textless{}{-}}\FunctionTok{read.fasta}\NormalTok{(x)}
+\NormalTok{  Vclean }\OtherTok{\textless{}{-}}\NormalTok{ V1[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{  Vclean }\OtherTok{\textless{}{-}}\NormalTok{ Vclean[Vclean }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}g\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}t\textquotesingle{}}\NormalTok{)]}
+\FunctionTok{return}\NormalTok{(Vclean)}
+\NormalTok{\}}
+
+\CommentTok{\#Variantes de paises americanos}
+\NormalTok{Var1}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT844047.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Guatemala {-} MT844047 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT844047 {-} B.1}
+\NormalTok{Var2}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT810698.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#San Diego, California, Estados Unidos {-} MT810698 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT810698 {-} B.1.241}
+\NormalTok{Var3}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MW553311.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Argentina {-} MW553311 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW553311 {-} B.1}
+\NormalTok{Var4}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MW309435.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Canada {-} MW309435 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW309435 {-} B.1.505}
+
+\CommentTok{\#Variantes de paises asiaticos}
+\NormalTok{Var5}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT919768.fasta\textquotesingle{}}\NormalTok{)}\CommentTok{\#Philipinas {-} MT919768 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT919768 {-} B.6}
+\NormalTok{Var6}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT879619.fasta\textquotesingle{}}\NormalTok{)}\CommentTok{\#Pakistan {-} MT879619 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT879619 {-} B.1}
+\NormalTok{Var7}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT847217.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Bangladesh {-} MT847217 {-}  https://www.ncbi.nlm.nih.gov/nuccore/MT847217 {-} B.1.1.25}
+\NormalTok{Var8}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT781415.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Tailandia {-} MT781415 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT781415 {-} A.6}
+\NormalTok{Var9}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT372481.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Malasia {-} MT372481 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT372481 {-} B.6.6}
+
+\CommentTok{\#Variantes de paises africanos}
+\NormalTok{Var10}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT800035.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Egypto {-} MT800035 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT800035 {-} B.1}
+\NormalTok{Var11}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT801001.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Lebanon {-} MT801001 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT801001 {-} B.1.1}
+\NormalTok{Var12}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT801041.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Turquía {-} MT801041 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT801041 {-} B.1.1}
+\NormalTok{Var13}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}LR963411.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Zimbabwe {-} LR963411 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR963411 {-} B.1.446}
+\NormalTok{Var14}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MW751197.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Kenya {-} MW751197 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW751197 {-} B.1.535}
+
+\CommentTok{\#Variantes de paises europeos}
+\NormalTok{Var15}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}OA975181.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Reino Unido {-} OA975181  {-} https://www.ncbi.nlm.nih.gov/nuccore/OA975181 {-} B.1.177}
+\NormalTok{Var16}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}OA984027.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Escocia {-} OA984027 {-} https://www.ncbi.nlm.nih.gov/nuccore/OA984027 {-} AD.2}
+\NormalTok{Var17}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}LR991977.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Polonia {-} LR991977 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR991977 {-} B.1.1.219}
+\NormalTok{Var18}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}LR883306.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Paises Bajos {-} LR883306 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR883306 {-} L.2}
+\NormalTok{Var19}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MW423684.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Italia {-} MW423684 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW423684 {-} B.1.258}
+\NormalTok{Var20}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT459924.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Grecia {-} MT459924 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT459924 {-} B.40}
+
+\CommentTok{\#Variante adicional de Oceania}
+\NormalTok{Var21}\OtherTok{\textless{}{-}}\FunctionTok{clean}\NormalTok{(}\StringTok{\textquotesingle{}MT973296.fasta\textquotesingle{}}\NormalTok{) }\CommentTok{\#Australia {-} MT973296 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT973296 {-} A.2.2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{longitud-de-cada-variante}{%
+\subsection{Longitud de cada variante}\label{longitud-de-cada-variante}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Longitud de las variantes de paises americanos}
+\FunctionTok{length}\NormalTok{(Var1) }\CommentTok{\#Guatemala {-} MT844047 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT844047 {-} B.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29882
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var2) }\CommentTok{\#San Diego, California, Estados Unidos {-} MT810698 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT810698 {-} B.1.241}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29409
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var3) }\CommentTok{\#Argentina {-} MW553311 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW553311 {-} B.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29726
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var4) }\CommentTok{\#Canada {-} MW309435 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW309435 {-} B.1.505}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29314
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Longitud de las variantes de paises asiaticos}
+\FunctionTok{length}\NormalTok{(Var5) }\CommentTok{\#Philipinas {-} MT919768 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT919768 {-} B.6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29813
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var6) }\CommentTok{\#Pakistan {-} MT879619 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT879619 {-} B.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29897
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var7) }\CommentTok{\#Bangladesh {-} MT847217 {-}  https://www.ncbi.nlm.nih.gov/nuccore/MT847217 {-} B.1.1.25}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29903
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var8) }\CommentTok{\#Tailandia {-} MT781415 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT781415 {-} A.6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29824
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var9) }\CommentTok{\#Malasia {-} MT372481 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT372481 {-} B.6.6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29897
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#V=Longitud de las variantes de paises africanos}
+\FunctionTok{length}\NormalTok{(Var10) }\CommentTok{\#Egypto {-} MT800035 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT800035 {-} B.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29793
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var11) }\CommentTok{\#Lebanon {-} MT801001 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT801001 {-} B.1.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29820
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var12) }\CommentTok{\#Turquía {-} MT801041 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT801041 {-} B.1.1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22376
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var13) }\CommentTok{\#Zimbabwe {-} LR963411 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR963411 {-} B.1.446}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22735
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var14) }\CommentTok{\#Kenya {-} MW751197 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW751197 {-} B.1.535}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 28933
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Variantes de paises europeos}
+\FunctionTok{length}\NormalTok{(Var15) }\CommentTok{\#Reino Unido {-} OA975181  {-} https://www.ncbi.nlm.nih.gov/nuccore/OA975181 {-} B.1.177}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29248
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var16) }\CommentTok{\#Escocia {-} OA984027 {-} https://www.ncbi.nlm.nih.gov/nuccore/OA984027 {-} AD.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29782
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var17) }\CommentTok{\#Polonia {-} LR991977 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR991977 {-} B.1.1.219}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29425
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var18) }\CommentTok{\#Paises Bajos {-} LR883306 {-} https://www.ncbi.nlm.nih.gov/nuccore/LR883306 {-} L.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29606
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var19) }\CommentTok{\#Italia {-} MW423684 {-} https://www.ncbi.nlm.nih.gov/nuccore/MW423684 {-} B.1.258}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29834
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(Var20) }\CommentTok{\#Grecia {-} MT459924 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT459924 {-} B.40}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29818
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Logitud de la variante adicional de Oceania}
+\FunctionTok{length}\NormalTok{(Var21) }\CommentTok{\#Australia {-} MT973296 {-} https://www.ncbi.nlm.nih.gov/nuccore/MT973296 {-} A.2.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29806
+\end{verbatim}
+
+\hypertarget{comparacion-entre-las-cantidades-de-adenina-timina-citocina-y-guanina}{%
+\subsection{Comparacion entre las cantidades de Adenina, Timina,
+Citocina y
+Guanina}\label{comparacion-entre-las-cantidades-de-adenina-timina-citocina-y-guanina}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Variantes 1{-}7}
+\NormalTok{numSecuencias }\OtherTok{\textless{}{-}} \DecValTok{7}
+\NormalTok{numBases }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{( }\AttributeTok{bases=}\FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}G\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}T\textquotesingle{}}\NormalTok{), }\AttributeTok{times=}\NormalTok{numSecuencias),}
+                     \AttributeTok{virus=}\FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"MT844047"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT810698"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MW553311"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MW309435"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT919768"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT879619"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT847217"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases)),}
+                     \AttributeTok{tots=}\FunctionTok{c}\NormalTok{(}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var1)), }\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var2)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var3)),}
+                     \FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var4)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var5)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var6)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var7))))}
+
+\FunctionTok{head}\NormalTok{(datos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   bases    virus tots
+## 1     A MT844047 8931
+## 2     C MT844047 5490
+## 3     G MT844047 5865
+## 4     T MT844047 9596
+## 5     A MT810698 8793
+## 6     C MT810698 5386
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(datos)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    28 obs. of  3 variables:
+##  $ bases: chr  "A" "C" "G" "T" ...
+##  $ virus: chr  "MT844047" "MT844047" "MT844047" "MT844047" ...
+##  $ tots : int  8931 5490 5865 9596 8793 5386 5762 9468 8876 5456 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(datos, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{bases, }\AttributeTok{y=}\NormalTok{tots, }\AttributeTok{fill=}\NormalTok{virus)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{virus) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set1"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Composición de nucleótidos de las variantes de america y asia"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Bases"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Total de bases"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Virus"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_dark}\NormalTok{()}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Evidencia1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Variantes 8{-}14}
+\NormalTok{numSecuencias }\OtherTok{\textless{}{-}} \DecValTok{7}
+\NormalTok{numBases }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{datos2 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{( }\AttributeTok{bases=}\FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}G\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}T\textquotesingle{}}\NormalTok{), }\AttributeTok{times=}\NormalTok{numSecuencias),}
+                     \AttributeTok{virus=}\FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"MT781415"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT372481"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT800035"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT801001"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT801041"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"LR963411"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MW751197"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases)),}
+                     \AttributeTok{tots=}\FunctionTok{c}\NormalTok{(}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var8)), }\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var9)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var10)),}
+                     \FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var11)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var12)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var13)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var14))))}
+
+\FunctionTok{head}\NormalTok{(datos2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   bases    virus tots
+## 1     A MT781415 8909
+## 2     C MT781415 5483
+## 3     G MT781415 5853
+## 4     T MT781415 9579
+## 5     A MT372481 8961
+## 6     C MT372481 5485
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(datos2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    28 obs. of  3 variables:
+##  $ bases: chr  "A" "C" "G" "T" ...
+##  $ virus: chr  "MT781415" "MT781415" "MT781415" "MT781415" ...
+##  $ tots : int  8909 5483 5853 9579 8961 5485 5857 9594 8894 5470 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(datos2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{bases, }\AttributeTok{y=}\NormalTok{tots, }\AttributeTok{fill=}\NormalTok{virus)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{virus) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set1"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Composición de nucleótidos de las variantes de asia y africa"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Bases"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Total de bases"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Virus"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_dark}\NormalTok{()}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Evidencia1_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Variantes 15{-}21}
+\NormalTok{numSecuencias }\OtherTok{\textless{}{-}} \DecValTok{7}
+\NormalTok{numBases }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{datos3 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{( }\AttributeTok{bases=}\FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}G\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}T\textquotesingle{}}\NormalTok{), }\AttributeTok{times=}\NormalTok{numSecuencias),}
+                     \AttributeTok{virus=}\FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"OA975181"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"OA984027"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"LR991977"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"LR883306"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MW423684"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT459924"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases),}
+                     \FunctionTok{rep}\NormalTok{(}\StringTok{"MT973296"}\NormalTok{, }\AttributeTok{times=}\NormalTok{numBases)),}
+                     \AttributeTok{tots=}\FunctionTok{c}\NormalTok{(}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var15)), }\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var16)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var17)),}
+                     \FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var18)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var19)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var20)),}\FunctionTok{as.vector}\NormalTok{(}\FunctionTok{table}\NormalTok{(Var21))))}
+
+\FunctionTok{head}\NormalTok{(datos3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   bases    virus tots
+## 1     A OA975181 8743
+## 2     C OA975181 5359
+## 3     G OA975181 5735
+## 4     T OA975181 9411
+## 5     A OA984027 8892
+## 6     C OA984027 5467
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(datos3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    28 obs. of  3 variables:
+##  $ bases: chr  "A" "C" "G" "T" ...
+##  $ virus: chr  "OA975181" "OA975181" "OA975181" "OA975181" ...
+##  $ tots : int  8743 5359 5735 9411 8892 5467 5845 9578 8797 5400 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(datos3, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{bases, }\AttributeTok{y=}\NormalTok{tots, }\AttributeTok{fill=}\NormalTok{virus)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{virus) }\SpecialCharTok{+} \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set1"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Composición de nucleótidos de las variantes de europa y oceania"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Bases"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Total de bases"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Virus"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_dark}\NormalTok{()}
+
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Evidencia1_files/figure-latex/unnamed-chunk-3-3.pdf}
+\#\# Interpretación de las graficas de comparación de bases Se puede
+observar muy claramente en las gráficas de comparación entre aminoácidos
+la similitudes que existen entre las variantes, especialmente cuando
+hablamos de las variantes cuyo locus comienza con las mismas letras (MT,
+MW, LR, OA). Al comparar las variantes cuyos locus comienzan con las
+mismas letras, se puede observar que tienen casi la misma cantidad de
+cada aminoácido; no estoy del todo seguro si debido a esto se clasifican
+con distintas letras, pero se me hizo una observación interesante. No
+pude observar una relación explícita que exista entre las variantes y la
+región geográfica en la que se encontraron, lo cual tal vez es debido a
+que este análisis no se hizo a tanta profundidad y es posible que si se
+condujera una investigación más a detalle sobre la cantidad de
+aminoácidos en cada variante se pudiera notar una relación entre las
+variantes y la región en la que se reportaron.
+
+\hypertarget{arbol-filogenetico}{%
+\subsection{Arbol filogenetico}\label{arbol-filogenetico}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(Biostrings)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: BiocGenerics
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'BiocGenerics' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: parallel
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'BiocGenerics'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:parallel':
+## 
+##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+##     clusterExport, clusterMap, parApply, parCapply, parLapply,
+##     parLapplyLB, parRapply, parSapply, parSapplyLB
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     IQR, mad, sd, var, xtabs
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+##     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+##     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+##     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+##     union, unique, unsplit, which.max, which.min
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: S4Vectors
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'S4Vectors'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     expand.grid
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: IRanges
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'IRanges'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:grDevices':
+## 
+##     windows
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: XVector
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'Biostrings'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:seqinr':
+## 
+##     translate
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     strsplit
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(seqinr)}
+\FunctionTok{library}\NormalTok{(adegenet)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'adegenet' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: ade4
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ade4' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ade4'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:Biostrings':
+## 
+##     score
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:BiocGenerics':
+## 
+##     score
+\end{verbatim}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'spdep':
+##   method   from
+##   plot.mst ape
+\end{verbatim}
+
+\begin{verbatim}
+## 
+##    /// adegenet 2.1.3 is loaded ////////////
+## 
+##    > overview: '?adegenet'
+##    > tutorials/doc/questions: 'adegenetWeb()' 
+##    > bug reports/feature requests: adegenetIssues()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ape)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ape' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ape'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:Biostrings':
+## 
+##     complement
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:seqinr':
+## 
+##     as.alignment, consensus
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggtree)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'treeio':
+##   method     from
+##   root.phylo ape
+\end{verbatim}
+
+\begin{verbatim}
+## ggtree v2.4.1  For help: https://yulab-smu.top/treedata-book/
+## 
+## If you use ggtree in published research, please cite the most appropriate paper(s):
+## 
+## [36m-[39m Guangchuang Yu. Using ggtree to visualize data on tree-like structures. Current Protocols in Bioinformatics, 2020, 69:e96. doi:10.1002/cpbi.96
+## [36m-[39m Guangchuang Yu, Tommy Tsan-Yuk Lam, Huachen Zhu, Yi Guan. Two methods for mapping and visualizing associated data on phylogeny using ggtree. Molecular Biology and Evolution 2018, 35(12):3041-3043. doi:10.1093/molbev/msy194
+## [36m-[39m Guangchuang Yu, David Smith, Huachen Zhu, Yi Guan, Tommy Tsan-Yuk Lam. ggtree: an R package for visualization and annotation of phylogenetic trees with their covariates and other associated data. Methods in Ecology and Evolution 2017, 8(1):28-36. doi:10.1111/2041-210X.12628
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'ggtree'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ape':
+## 
+##     rotate
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:Biostrings':
+## 
+##     collapse
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:IRanges':
+## 
+##     collapse
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:S4Vectors':
+## 
+##     expand
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DECIPHER)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: RSQLite
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'RSQLite' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(viridis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'viridis' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: viridisLite
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'viridisLite' was built under R version 4.0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\NormalTok{virus }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"MT844047"}\NormalTok{,}\StringTok{"MT810698"}\NormalTok{,}\StringTok{"MW553311"}\NormalTok{,}\StringTok{"MW309435"}\NormalTok{,}\StringTok{"MT919768"}\NormalTok{,}\StringTok{"MT879619"}\NormalTok{,}\StringTok{"MT847217"}\NormalTok{,}\StringTok{"MT781415"}\NormalTok{,}\StringTok{"MT372481"}\NormalTok{,}\StringTok{"MT800035"}\NormalTok{,}\StringTok{"MT801001"}\NormalTok{,}\StringTok{"MT801041"}\NormalTok{,}\StringTok{"LR963411"}\NormalTok{,}\StringTok{"MW751197"}\NormalTok{,}\StringTok{"OA975181"}\NormalTok{,}\StringTok{"OA984027"}\NormalTok{,}\StringTok{"LR991977"}\NormalTok{,}\StringTok{"LR883306"}\NormalTok{,}\StringTok{"MW423684"}\NormalTok{,}\StringTok{"MT459924"}\NormalTok{,}\StringTok{"MT973296"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sacamos-las-secuencias-de-genbank}{%
+\subsection{Sacamos las secuencias de
+GenBank}\label{sacamos-las-secuencias-de-genbank}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_sequences }\OtherTok{\textless{}{-}} \FunctionTok{read.GenBank}\NormalTok{(virus)}
+\FunctionTok{str}\NormalTok{(virus\_sequences)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 21
+##  $ MT844047: raw [1:29882] 88 18 18 88 ...
+##  $ MT810698: raw [1:29409] 88 18 48 48 ...
+##  $ MW553311: raw [1:29726] 48 88 18 28 ...
+##  $ MW309435: raw [1:29611] 88 48 88 18 ...
+##  $ MT919768: raw [1:29813] 88 28 18 18 ...
+##  $ MT879619: raw [1:29897] 48 48 18 18 ...
+##  $ MT847217: raw [1:29903] 88 18 18 88 ...
+##  $ MT781415: raw [1:29824] 88 88 88 48 ...
+##  $ MT372481: raw [1:29898] 88 48 48 18 ...
+##  $ MT800035: raw [1:29793] 18 18 18 28 ...
+##  $ MT801001: raw [1:29829] 28 18 18 18 ...
+##  $ MT801041: raw [1:29633] 18 48 18 28 ...
+##  $ LR963411: raw [1:29814] f0 f0 f0 f0 ...
+##  $ MW751197: raw [1:29494] 48 28 18 28 ...
+##  $ OA975181: raw [1:29903] f0 f0 f0 f0 ...
+##  $ OA984027: raw [1:29903] f0 f0 f0 f0 ...
+##  $ LR991977: raw [1:29903] f0 f0 f0 f0 ...
+##  $ LR883306: raw [1:29779] f0 f0 f0 f0 ...
+##  $ MW423684: raw [1:29834] 88 88 28 88 ...
+##  $ MT459924: raw [1:29818] 88 88 28 88 ...
+##  $ MT973296: raw [1:29806] 28 18 28 18 ...
+##  - attr(*, "class")= chr "DNAbin"
+##  - attr(*, "description")= chr [1:21] "MT844047.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/GTM/CDC-1227/2020, complete genome" "MT810698.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/USA/SEARCH-1273-SAN/2020, complete genome" "MW553311.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/ARG/Cordoba-3696-24/2020, complete genome" "MW309435.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/CAN/COVID_CRCHUM_Post_Freez"| __truncated__ ...
+##  - attr(*, "species")= chr [1:21] "Severe_acute_respiratory_syndrome_coronavirus_2" "Severe_acute_respiratory_syndrome_coronavirus_2" "Severe_acute_respiratory_syndrome_coronavirus_2" "Severe_acute_respiratory_syndrome_coronavirus_2" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{attributes}\NormalTok{(virus\_sequences)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $names
+##  [1] "MT844047" "MT810698" "MW553311" "MW309435" "MT919768" "MT879619"
+##  [7] "MT847217" "MT781415" "MT372481" "MT800035" "MT801001" "MT801041"
+## [13] "LR963411" "MW751197" "OA975181" "OA984027" "LR991977" "LR883306"
+## [19] "MW423684" "MT459924" "MT973296"
+## 
+## $class
+## [1] "DNAbin"
+## 
+## $description
+##  [1] "MT844047.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/GTM/CDC-1227/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                           
+##  [2] "MT810698.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/USA/SEARCH-1273-SAN/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                    
+##  [3] "MW553311.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/ARG/Cordoba-3696-24/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                    
+##  [4] "MW309435.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/CAN/COVID_CRCHUM_Post_Freeze_1/2020 ORF1ab polyprotein (ORF1ab), ORF1a polyprotein (ORF1ab), surface glycoprotein (S), ORF3a protein (ORF3a), envelope protein (E), membrane glycoprotein (M), ORF6 protein (ORF6), ORF7a protein (ORF7a), ORF7b (ORF7b), ORF8 protein (ORF8), and nucleocapsid phosphoprotein (N) genes, complete cds; and ORF10 protein (ORF10) gene, partial cds"                                                          
+##  [5] "MT919768.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/PHL/GS/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                                 
+##  [6] "MT879619.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/PAK/SARS-CoV-2-KPK-KUST-SJTU/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                           
+##  [7] "MT847217.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/BGD/BCSIR_NILMRC_259/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                   
+##  [8] "MT781415.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/THA/MUMT-3/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                             
+##  [9] "MT372481.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/MYS/189332/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                             
+## [10] "MT800035.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/EGY/CUNCI-HGC7I029/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                     
+## [11] "MT801001.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/LBN/LB-R9/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                              
+## [12] "MT801041.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/TUR/BUU434/2020 ORF1ab polyprotein (ORF1ab) gene, complete cds; ORF1a polyprotein (ORF1ab) gene, partial cds; surface glycoprotein (S) and ORF3a protein (ORF3a) genes, complete cds; envelope protein (E) gene, partial cds; membrane glycoprotein (M), ORF6 protein (ORF6), ORF7a protein (ORF7a), ORF7b (ORF7b), ORF8 protein (ORF8), and nucleocapsid phosphoprotein (N) genes, complete cds; and ORF10 protein (ORF10) gene, partial cds"
+## [13] "LR963411.1 Severe acute respiratory syndrome coronavirus 2 isolate ZW-6977 genome assembly, chromosome: 1"                                                                                                                                                                                                                                                                                                                                                                                                                        
+## [14] "MW751197.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/KEN/C3194/2020 ORF1ab polyprotein (ORF1ab) and ORF1a polyprotein (ORF1ab) genes, partial cds; surface glycoprotein (S), ORF3a protein (ORF3a), envelope protein (E), membrane glycoprotein (M), and ORF6 protein (ORF6) genes, complete cds; ORF7a protein (ORF7a) and ORF7b (ORF7b) genes, partial cds; and ORF8 protein (ORF8), nucleocapsid phosphoprotein (N), and ORF10 protein (ORF10) genes, complete cds"                             
+## [15] "OA975181.1 Severe acute respiratory syndrome coronavirus 2 genome assembly, complete genome: monopartite"                                                                                                                                                                                                                                                                                                                                                                                                                         
+## [16] "OA984027.1 Severe acute respiratory syndrome coronavirus 2 genome assembly, complete genome: monopartite"                                                                                                                                                                                                                                                                                                                                                                                                                         
+## [17] "LR991977.1 Severe acute respiratory syndrome coronavirus 2 genome assembly, chromosome: 1"                                                                                                                                                                                                                                                                                                                                                                                                                                        
+## [18] "LR883306.1 Severe acute respiratory syndrome coronavirus 2 isolate hCoV-19/Netherlands/NA_429/2020 genome assembly, complete genome: monopartite"                                                                                                                                                                                                                                                                                                                                                                                 
+## [19] "MW423684.2 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/ITA/CH360/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                              
+## [20] "MT459924.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/GRC/52_37266/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                           
+## [21] "MT973296.1 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/AUS/TAS223/2020, complete genome"                                                                                                                                                                                                                                                                                                                                                                                                             
+## 
+## $species
+##  [1] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [2] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [3] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [4] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [5] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [6] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [7] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [8] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [9] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [10] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [11] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [12] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [13] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [14] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [15] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [16] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [17] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [18] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [19] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [20] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [21] "Severe_acute_respiratory_syndrome_coronavirus_2"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(virus\_sequences)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "MT844047" "MT810698" "MW553311" "MW309435" "MT919768" "MT879619"
+##  [7] "MT847217" "MT781415" "MT372481" "MT800035" "MT801001" "MT801041"
+## [13] "LR963411" "MW751197" "OA975181" "OA984027" "LR991977" "LR883306"
+## [19] "MW423684" "MT459924" "MT973296"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{attr}\NormalTok{(virus\_sequences, }\StringTok{"species"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [2] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [3] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [4] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [5] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [6] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [7] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [8] "Severe_acute_respiratory_syndrome_coronavirus_2"
+##  [9] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [10] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [11] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [12] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [13] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [14] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [15] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [16] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [17] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [18] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [19] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [20] "Severe_acute_respiratory_syndrome_coronavirus_2"
+## [21] "Severe_acute_respiratory_syndrome_coronavirus_2"
+\end{verbatim}
+
+\hypertarget{creamos-un-archivo-fasta-con-todoas-las-secuencias}{%
+\subsection{Creamos un archivo fasta con todoas las
+secuencias}\label{creamos-un-archivo-fasta-con-todoas-las-secuencias}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write.dna}\NormalTok{(virus\_sequences,  }\AttributeTok{file =}\StringTok{"virus\_seqs.fasta"}\NormalTok{, }\AttributeTok{format =} \StringTok{"fasta"}\NormalTok{, }\AttributeTok{append =}
+\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{nbcol =} \DecValTok{6}\NormalTok{, }\AttributeTok{colsep =} \StringTok{" "}\NormalTok{, }\AttributeTok{colw =} \DecValTok{10}\NormalTok{)}
+
+\NormalTok{virus\_seq\_not\_align }\OtherTok{\textless{}{-}} \FunctionTok{readDNAStringSet}\NormalTok{(}\StringTok{"virus\_seqs.fasta"}\NormalTok{, }\AttributeTok{format =} \StringTok{"fasta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in .Call2("fasta_index", filexp_list, nrec, skip, seek.first.rec, :
+## reading FASTA file virus_seqs.fasta: ignored 52122 invalid one-letter sequence
+## codes
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_seq\_not\_align}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## DNAStringSet object of length 21:
+##      width seq                                              names               
+##  [1] 29882 ATTAAAGGTTTATACCTTCCCAG...GGAGAATGACAAAAAAAAAAAA MT844047
+##  [2] 29409 ATGGAGAGCCTTGTCCCTGGTTT...AGTTAACTTTAATCTCACATAG MT810698
+##  [3] 29726 GATCTGTTCTCTAAACGAACTTT...TACAGTGAACAATGCTAGGGAG MW553311
+##  [4] 29611 AGATCTGTTCTATAAACGAACTT...AGTAGATGTAGTTAACTTTAAT MW309435
+##  [5] 29813 ACTTTCGATCTCTTGTAGATCTG...GCTATCCCCATGTGATTTTAAT MT919768
+##  ...   ... ...
+## [17] 29903 NNNNNNNNNNTATACCTTCCCAG...NNNNNNNNNNNNNNNNNNNNNN LR991977
+## [18] 29779 NNNNNNNNNNNNNNNNNNNNNNN...GTGTAAAATTAATTTTAGTAGT LR883306
+## [19] 29834 AACAAACCAACCAACTTTCGATC...ATTTTAATAGCTTCTTAGGAGA MW423684
+## [20] 29818 AACAAACCAACCAACTTTCGATC...TTAGTAGTGCTATCCCCATGTG MT459924
+## [21] 29806 CTCTTGTAGATCTGTTCTCTAAA...TATCCCCATGTGATTTTAATAG MT973296
+\end{verbatim}
+
+\hypertarget{alineamos-las-secuencias}{%
+\subsection{Alineamos las secuencias}\label{alineamos-las-secuencias}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_seq\_not\_align }\OtherTok{\textless{}{-}} \FunctionTok{OrientNucleotides}\NormalTok{(virus\_seq\_not\_align)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ========================================================================================================================================================================================================
+## 
+## Time difference of 0.25 secs
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_seq\_align }\OtherTok{\textless{}{-}} \FunctionTok{AlignSeqs}\NormalTok{(virus\_seq\_not\_align)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Determining distance matrix based on shared 11-mers:
+## ================================================================================
+## 
+## Time difference of 0.2 secs
+## 
+## Clustering into groups by similarity:
+## ================================================================================
+## 
+## Time difference of 0.01 secs
+## 
+## Aligning Sequences:
+## ================================================================================
+## 
+## Time difference of 1.82 secs
+## 
+## Iteration 1 of 2:
+## 
+## Determining distance matrix based on alignment:
+## ================================================================================
+## 
+## Time difference of 0.01 secs
+## 
+## Reclustering into groups by similarity:
+## ================================================================================
+## 
+## Time difference of 0.01 secs
+## 
+## Realigning Sequences:
+## ================================================================================
+## 
+## Time difference of 1.69 secs
+## 
+## Iteration 2 of 2:
+## 
+## Determining distance matrix based on alignment:
+## ================================================================================
+## 
+## Time difference of 0.01 secs
+## 
+## Reclustering into groups by similarity:
+## ================================================================================
+## 
+## Time difference of 0 secs
+## 
+## Realigning Sequences:
+## ================================================================================
+## 
+## Time difference of 0.01 secs
+\end{verbatim}
+
+\hypertarget{guardamos-el-resultado-y-obtenemos-el-archivo}{%
+\subsection{Guardamos el resultado y obtenemos el
+archivo}\label{guardamos-el-resultado-y-obtenemos-el-archivo}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{writeXStringSet}\NormalTok{(virus\_seq\_align, }\AttributeTok{file=}\StringTok{"virus\_seq\_align.fasta"}\NormalTok{)}
+\NormalTok{virus\_aligned }\OtherTok{\textless{}{-}} \FunctionTok{read.alignment}\NormalTok{(}\StringTok{"virus\_seq\_align.fasta"}\NormalTok{, }\AttributeTok{format =} \StringTok{"fasta"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{creamos-una-matriz-de-distancia-y-la-visualizamos}{%
+\subsection{Creamos una matriz de distancia y la
+visualizamos}\label{creamos-una-matriz-de-distancia-y-la-visualizamos}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{matriz\_distancia }\OtherTok{\textless{}{-}} \FunctionTok{dist.alignment}\NormalTok{(virus\_aligned, }\AttributeTok{matrix =} \StringTok{"similarity"}\NormalTok{)}
+\NormalTok{temp }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{as.matrix}\NormalTok{(matriz\_distancia))}
+\FunctionTok{table.paint}\NormalTok{(temp, }\AttributeTok{cleg=}\DecValTok{0}\NormalTok{, }\AttributeTok{clabel.row=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\AttributeTok{clabel.col=}\NormalTok{.}\DecValTok{5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{scale\_color\_viridis}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Evidencia1_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+\hypertarget{ahora-suxed-hacemos-el-arbol}{%
+\subsection{Ahora sí hacemos el
+arbol}\label{ahora-suxed-hacemos-el-arbol}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_tree }\OtherTok{\textless{}{-}} \FunctionTok{nj}\NormalTok{(matriz\_distancia)}
+\FunctionTok{class}\NormalTok{(virus\_tree) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "phylo"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{virus\_tree }\OtherTok{\textless{}{-}} \FunctionTok{ladderize}\NormalTok{(virus\_tree)}
+\FunctionTok{plot}\NormalTok{(virus\_tree, }\AttributeTok{cex =} \FloatTok{0.4}\NormalTok{)}
+\FunctionTok{title}\NormalTok{(}\StringTok{"Árbol de variaciones de Covid{-}19 en distintas regiones del mundo"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Evidencia1_files/figure-latex/unnamed-chunk-10-1.pdf}
+\#\# Interpretación del árbol
+
+\end{document}

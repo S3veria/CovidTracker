@@ -1,0 +1,255 @@
+---
+title: "Evidencia 2 - Parte 2"
+author: "Santiago Reyes Moran - A01639030"
+date: "28/4/2021"
+output:
+  html_document:
+    df_print: paged
+---
+## Parte 1 de la evidencia y referencias
+```{r}
+##Las referencias y el video las pongo primero para que no se pierdan en el documento
+```
+Video (Parte 1 de la evidencia): https://www.youtube.com/watch?v=eJFx7eqtzsM
+
+Referencias:
+Rabaan, A. (n.d). EMERGENCIA DE SARS-COV-2. ASPECTOS BÁSICOS SOBRE SU ORIGEN, EPIDEMIOLOGÍA, ESTRUCTURA Y PATOGENIA PARA CLÍNICOS. PubMed Central (PMC). https://pubmed.ncbi.nlm.nih.gov/32275259/
+
+Dabanch, J. (2021, 1 febrero). EMERGENCIA DE SARS-COV-2. ASPECTOS BÁSICOS SOBRE SU ORIGEN, EPIDEMIOLOGÍA, ESTRUCTURA Y PATOGENIA PARA CLÍNICOS. PubMed Central (PMC). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7849593/
+
+Rao, Y. H. C. (2020, julio). The emergence of a novel coronavirus (SARS-CoV-2) disease and their neuroinvasive propensity may affect in COVID-19 patients. PubMed. https://pubmed.ncbi.nlm.nih.gov/32320066/
+
+
+## Importación de librerias y de secuencias "limpias"
+```{r}
+library('seqinr')
+library('ggplot2')
+library(ggthemes)
+library(stringr)
+
+#Ruta
+getwd()
+setwd("C:/Users/user/Desktop/Biología computacional/Evidencia final/FASTAS")
+
+# Funcion de limpieza de caracteres: (Creditos a Lucas Wong)
+clean <- function(x) {
+  V1<-read.fasta(x)
+  Vclean <- V1[[1]]
+  Vclean <- Vclean[Vclean %in% c('a', 'c', 'g', 't')]
+return(Vclean)
+}
+
+#Variantes de paises americanos
+Var1<-clean('MT844047.fasta') #Guatemala - MT844047 - https://www.ncbi.nlm.nih.gov/nuccore/MT844047 - B.1
+Var2<-clean('MT810698.fasta') #San Diego, California, Estados Unidos - MT810698 - https://www.ncbi.nlm.nih.gov/nuccore/MT810698 - B.1.241
+Var3<-clean('MW553311.fasta') #Argentina - MW553311 - https://www.ncbi.nlm.nih.gov/nuccore/MW553311 - B.1
+Var4<-clean('MW309435.fasta') #Canada - MW309435 - https://www.ncbi.nlm.nih.gov/nuccore/MW309435 - B.1.505
+
+#Variantes de paises asiaticos
+Var5<-clean('MT919768.fasta')#Filipinas  - MT919768 - https://www.ncbi.nlm.nih.gov/nuccore/MT919768 - B.6
+Var6<-clean('MT879619.fasta')#Pakistan - MT879619 - https://www.ncbi.nlm.nih.gov/nuccore/MT879619 - B.1
+Var7<-clean('MT847217.fasta') #Bangladesh - MT847217 -  https://www.ncbi.nlm.nih.gov/nuccore/MT847217 - B.1.1.25
+Var8<-clean('MT781415.fasta') #Tailandia - MT781415 - https://www.ncbi.nlm.nih.gov/nuccore/MT781415 - A.6
+Var9<-clean('MT372481.fasta') #Malasia - MT372481 - https://www.ncbi.nlm.nih.gov/nuccore/MT372481 - B.6.6
+
+#Variantes de paises africanos
+Var10<-clean('MT800035.fasta') #Egypto - MT800035 - https://www.ncbi.nlm.nih.gov/nuccore/MT800035 - B.1
+Var11<-clean('MT801001.fasta') #Lebanon - MT801001 - https://www.ncbi.nlm.nih.gov/nuccore/MT801001 - B.1.1
+Var12<-clean('MT801041.fasta') #Turquía - MT801041 - https://www.ncbi.nlm.nih.gov/nuccore/MT801041 - B.1.1
+Var13<-clean('LR963411.fasta') #Zimbabwe - LR963411 - https://www.ncbi.nlm.nih.gov/nuccore/LR963411 - B.1.446
+Var14<-clean('MW751197.fasta') #Kenya - MW751197 - https://www.ncbi.nlm.nih.gov/nuccore/MW751197 - B.1.535
+
+#Variantes de paises europeos
+Var15<-clean('OA975181.fasta') #Reino Unido - OA975181  - https://www.ncbi.nlm.nih.gov/nuccore/OA975181 - B.1.177
+Var16<-clean('OA984027.fasta') #Escocia - OA984027 - https://www.ncbi.nlm.nih.gov/nuccore/OA984027 - AD.2
+Var17<-clean('LR991977.fasta') #Polonia - LR991977 - https://www.ncbi.nlm.nih.gov/nuccore/LR991977 - B.1.1.219
+Var18<-clean('LR883306.fasta') #Paises Bajos - LR883306 - https://www.ncbi.nlm.nih.gov/nuccore/LR883306 - L.2
+Var19<-clean('MW423684.fasta') #Italia - MW423684 - https://www.ncbi.nlm.nih.gov/nuccore/MW423684 - B.1.258
+Var20<-clean('MT459924.fasta') #Grecia - MT459924 - https://www.ncbi.nlm.nih.gov/nuccore/MT459924 - B.40
+
+#Variante adicional de Oceania
+Var21<-clean('MT973296.fasta') #Australia - MT973296 - https://www.ncbi.nlm.nih.gov/nuccore/MT973296 - A.2.2
+
+```
+
+## Longitud de cada variante
+```{r}
+#Longitud de las variantes de paises americanos
+length(Var1) #Guatemala - MT844047 - https://www.ncbi.nlm.nih.gov/nuccore/MT844047 - B.1
+length(Var2) #San Diego, California, Estados Unidos - MT810698 - https://www.ncbi.nlm.nih.gov/nuccore/MT810698 - B.1.241
+length(Var3) #Argentina - MW553311 - https://www.ncbi.nlm.nih.gov/nuccore/MW553311 - B.1
+length(Var4) #Canada - MW309435 - https://www.ncbi.nlm.nih.gov/nuccore/MW309435 - B.1.505
+
+#Longitud de las variantes de paises asiaticos
+length(Var5) #Filipinas  - MT919768 - https://www.ncbi.nlm.nih.gov/nuccore/MT919768 - B.6
+length(Var6) #Pakistan - MT879619 - https://www.ncbi.nlm.nih.gov/nuccore/MT879619 - B.1
+length(Var7) #Bangladesh - MT847217 -  https://www.ncbi.nlm.nih.gov/nuccore/MT847217 - B.1.1.25
+length(Var8) #Tailandia - MT781415 - https://www.ncbi.nlm.nih.gov/nuccore/MT781415 - A.6
+length(Var9) #Malasia - MT372481 - https://www.ncbi.nlm.nih.gov/nuccore/MT372481 - B.6.6
+
+#V=Longitud de las variantes de paises africanos
+length(Var10) #Egypto - MT800035 - https://www.ncbi.nlm.nih.gov/nuccore/MT800035 - B.1
+length(Var11) #Lebanon - MT801001 - https://www.ncbi.nlm.nih.gov/nuccore/MT801001 - B.1.1
+length(Var12) #Turquía - MT801041 - https://www.ncbi.nlm.nih.gov/nuccore/MT801041 - B.1.1
+length(Var13) #Zimbabwe - LR963411 - https://www.ncbi.nlm.nih.gov/nuccore/LR963411 - B.1.446
+length(Var14) #Kenya - MW751197 - https://www.ncbi.nlm.nih.gov/nuccore/MW751197 - B.1.535
+
+#Variantes de paises europeos
+length(Var15) #Reino Unido - OA975181  - https://www.ncbi.nlm.nih.gov/nuccore/OA975181 - B.1.177
+length(Var16) #Escocia - OA984027 - https://www.ncbi.nlm.nih.gov/nuccore/OA984027 - AD.2
+length(Var17) #Polonia - LR991977 - https://www.ncbi.nlm.nih.gov/nuccore/LR991977 - B.1.1.219
+length(Var18) #Paises Bajos - LR883306 - https://www.ncbi.nlm.nih.gov/nuccore/LR883306 - L.2
+length(Var19) #Italia - MW423684 - https://www.ncbi.nlm.nih.gov/nuccore/MW423684 - B.1.258
+length(Var20) #Grecia - MT459924 - https://www.ncbi.nlm.nih.gov/nuccore/MT459924 - B.40
+
+#Logitud de la variante adicional de Oceania
+length(Var21) #Australia - MT973296 - https://www.ncbi.nlm.nih.gov/nuccore/MT973296 - A.2.2
+
+```
+
+## Comparacion entre las cantidades de Adenina, Timina, Citocina y Guanina
+```{r}
+
+#Variantes 1-7
+numSecuencias <- 7
+numBases <- 4
+datos <- data.frame( bases=rep(c('A', 'C', 'G', 'T'), times=numSecuencias),
+                     virus=c(rep("MT844047", times=numBases),
+                     rep("MT810698", times=numBases),
+                     rep("MW553311", times=numBases),
+                     rep("MW309435", times=numBases),
+                     rep("MT919768", times=numBases),
+                     rep("MT879619", times=numBases),
+                     rep("MT847217", times=numBases)),
+                     tots=c(as.vector(table(Var1)), as.vector(table(Var2)),as.vector(table(Var3)),
+                     as.vector(table(Var4)),as.vector(table(Var5)),as.vector(table(Var6)),as.vector(table(Var7))))
+
+head(datos,28)
+str(datos)
+
+p <- ggplot(datos, aes(x=bases, y=tots, fill=virus)) + geom_bar(stat = "identity") + facet_grid(~virus) + scale_fill_brewer(palette = "Set1") + ggtitle("Composición de nucleótidos de las variantes de america y asia") + labs(x="Bases", y="Total de bases", fill="Virus") + theme_dark()
+
+p
+
+#Variantes 8-14
+numSecuencias <- 7
+numBases <- 4
+datos2 <- data.frame( bases=rep(c('A', 'C', 'G', 'T'), times=numSecuencias),
+                     virus=c(rep("MT781415", times=numBases),
+                     rep("MT372481", times=numBases),
+                     rep("MT800035", times=numBases),
+                     rep("MT801001", times=numBases),
+                     rep("MT801041", times=numBases),
+                     rep("LR963411", times=numBases),
+                     rep("MW751197", times=numBases)),
+                     tots=c(as.vector(table(Var8)), as.vector(table(Var9)),as.vector(table(Var10)),
+                     as.vector(table(Var11)),as.vector(table(Var12)),as.vector(table(Var13)),as.vector(table(Var14))))
+
+head(datos2,28)
+str(datos2)
+
+p <- ggplot(datos2, aes(x=bases, y=tots, fill=virus)) + geom_bar(stat = "identity") + facet_grid(~virus) + scale_fill_brewer(palette = "Set1") + ggtitle("Composición de nucleótidos de las variantes de asia y africa") + labs(x="Bases", y="Total de bases", fill="Virus") + theme_dark()
+
+p
+
+#Variantes 15-21
+numSecuencias <- 7
+numBases <- 4
+datos3 <- data.frame( bases=rep(c('A', 'C', 'G', 'T'), times=numSecuencias),
+                     virus=c(rep("OA975181", times=numBases),
+                     rep("OA984027", times=numBases),
+                     rep("LR991977", times=numBases),
+                     rep("LR883306", times=numBases),
+                     rep("MW423684", times=numBases),
+                     rep("MT459924", times=numBases),
+                     rep("MT973296", times=numBases)),
+                     tots=c(as.vector(table(Var15)), as.vector(table(Var16)),as.vector(table(Var17)),
+                     as.vector(table(Var18)),as.vector(table(Var19)),as.vector(table(Var20)),as.vector(table(Var21))))
+
+head(datos3,28)
+str(datos3)
+
+p <- ggplot(datos3, aes(x=bases, y=tots, fill=virus)) + geom_bar(stat = "identity") + facet_grid(~virus) + scale_fill_brewer(palette = "Set1") + ggtitle("Composición de nucleótidos de las variantes de europa y oceania") + labs(x="Bases", y="Total de bases", fill="Virus") + theme_dark()
+
+p
+```
+
+## Interpretación de las graficas de comparación de bases
+```{r}
+#Aqui la interpretacion de las distintas graficas que se mostraron anteriormente
+```
+Se puede observar muy claramente en las gráficas de comparación entre aminoácidos la similitudes que existen entre las variantes, especialmente cuando hablamos de las variantes cuyo locus comienza con las mismas letras (MT, MW, LR, OA). Al comparar las variantes cuyos locus comienzan con las mismas letras, se puede observar que tienen casi la misma cantidad de cada aminoácido; no estoy del todo seguro si debido a esto se clasifican con distintas letras, pero se me hizo una observación interesante. No pude observar una relación explícita que exista entre las variantes y la región geográfica en la que se encontraron, lo cual tal vez es debido a que este análisis no se hizo a tanta profundidad y es posible que si se condujera una investigación más a detalle sobre la cantidad de aminoácidos en cada variante se pudiera notar una relación entre las variantes y la región en la que se reportaron.
+
+
+## Arbol filogenetico
+```{r}
+library(Biostrings)
+library(seqinr)
+library(adegenet)
+library(ape)
+library(ggtree)
+library(DECIPHER)
+library(viridis)
+library(ggplot2)
+
+virus <- c("MT844047","MT810698","MW553311","MW309435","MT919768","MT879619","MT847217","MT781415","MT372481","MT800035","MT801001","MT801041","LR963411","MW751197","OA975181","OA984027","LR991977","LR883306","MW423684","MT459924","MT973296")
+```
+
+## Sacamos las secuencias de GenBank
+```{r}
+virus_sequences <- read.GenBank(virus)
+str(virus_sequences)
+
+attributes(virus_sequences)
+names(virus_sequences)
+attr(virus_sequences, "species")
+
+```
+
+## Creamos un archivo fasta con todas las secuencias
+```{r}
+write.dna(virus_sequences,  file ="virus_seqs.fasta", format = "fasta", append =
+FALSE, nbcol = 6, colsep = " ", colw = 10)
+
+virus_seq_not_align <- readDNAStringSet("virus_seqs.fasta", format = "fasta")
+
+virus_seq_not_align
+
+```
+
+## Alineamos las secuencias
+```{r}
+virus_seq_not_align <- OrientNucleotides(virus_seq_not_align)
+virus_seq_align <- AlignSeqs(virus_seq_not_align)
+
+```
+
+## Guardamos el resultado y obtenemos el archivo
+```{r}
+writeXStringSet(virus_seq_align, file="virus_seq_align.fasta")
+virus_aligned <- read.alignment("virus_seq_align.fasta", format = "fasta")
+```
+
+## Creamos una matriz de distancia y la visualizamos
+```{r}
+matriz_distancia <- dist.alignment(virus_aligned, matrix = "similarity")
+temp <- as.data.frame(as.matrix(matriz_distancia))
+table.paint(temp, cleg=0, clabel.row=.5, clabel.col=.5) + scale_color_viridis()
+```
+
+## Ahora sí hacemos el arbol
+```{r}
+virus_tree <- nj(matriz_distancia)
+class(virus_tree) 
+virus_tree <- ladderize(virus_tree)
+plot(virus_tree, cex = 0.4)
+title("Árbol de variaciones de Covid-19 en distintas regiones del mundo")
+```
+```{r}
+```
+
+## Interpretación del árbol
+```{r}
+#Aqui la interpretacion del árbol filogenético que se muestra anteriormente
+```
+A partir del árbol filogenético que se generó anteriormente, se puede suponer que no existe una relación estricta entre las variantes del Covid-19 y las regiones en las que fueron registradas. Más que otra cosa, en el árbol, se observa que se separan las variantes del mismo “tipo”, como los B.1, los cuales se ven en la parte superior (variantes Reino Unido, Pakistán y Canada). En la parte media del árbol hay variaciones más “extrañas” como el AD.2, el L.2 y el B.1.1.219; en dicha rama no se puede observar una relación estricta entre las variantes. Después, en la parte baja del árbol, se dividen muy explícitamente las variantes: primero se encuentran más variantes del “tipo” B.1 (de Italia, Argentina, Kenya, Estados Unidos, etc...), luego en otra rama se encuentran los variantes de A (A.2.2 y A.6 de Australia y Tailandia respectivamente) y finalmente se encuentran otras variantes de B (B.40, B.6.6 y B.6 de Grecia, Malasia y Filipinas respectivamente). Lo mencionado anteriormente indica claramente que el árbol separa las variantes por la relación que tienen y que ella no depende de la región geográfica en la que se registraron; la información sugiere que la relación genética que las variantes tienen depende o está muy relacionado con el “tipo” de variante que es. Finalmente, es importante notar que sí es probable que “tipos” similares de variantes tengan orígenes geográficos similares (originalmente), pero esto no es lo que se está analizando necesariamente en las gráficas generadas en este documento y por ello no es la conclusión principal que se genera.
